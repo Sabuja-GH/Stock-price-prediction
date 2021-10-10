@@ -1,8 +1,8 @@
-Stock price prediction
+# Stock price prediction
 
-where we use a stm model which is the artificial repairing recurrent neural network the model will be trained on stock price of Google from 2012-2016 and vdp test upon stock price of Google on the month of January 2017
+Here we use a LSTM model which is the artificial repairing recurrent neural network the model will be trained on stock price of Google from 2012-2016 and vdp test upon stock price of Google on the month of January 2017.
 
-PREPROCESSING
+### PREPROCESSING
 
  in part 1 of data preprocessing we import all the libraries and import the training set and take only single feature or column of the training data set as training set.  In iloc we use one column to to get us an 2D array if we use just one when will get a a vector(1D).
 
@@ -26,7 +26,7 @@ RNN takes input as a 3D tensor that is a 3D array with shape [batch, timesteps, 
 
 Built stacked RNN which consists of dropout regularization various models and layers
 
-BUILDING RNN
+### BUILDING RNN
 
 we create lstm layer where we use 50 units(neurons). Return_sequence is returned true because it will be use lstm lyer again later. In input_shape, shape has the last two dimensions of the X_train, where each row of X_train is an input for the rnn. Finally, we add a dropout layer to which can drop 20% of the units/neurons for regularising while backpropagating and front propagating.
 
