@@ -1,6 +1,6 @@
 # Stock price prediction
 
-Here we use a LSTM model which is the artificial repairing recurrent neural network the model will be trained on stock price of Google from 2012-2016 and vdp test upon stock price of Google on the month of January 2017.
+Here we use a LSTM model which is the artificial recurrent neural network(RNN).The model will be trained on stock price of Google from 2012-2016 and vdp test upon stock price of Google on the month of January 2017.
 
 ### PREPROCESSING
 
