@@ -2,31 +2,29 @@
 
 Here we use a LSTM model which is the artificial recurrent neural network(RNN).The model will be trained on stock price of Google from 2012-2016 and vdp test upon stock price of Google on the month of January 2017.
 
-### PREPROCESSING
+### PART-1 Data Preprocessing
 
- in part 1 of data preprocessing we import all the libraries and import the training set and take only single feature or column of the training data set as training set.  In iloc we use one column to to get us an 2D array if we use just one when will get a a vector(1D).
+* All the libraries are imported. 
 
-for this rnn which will have a sigmoid activation function at the output layer we will use the feature scaling that is normalisation instead  standardization by using the min_Max_scaler class and create the object sc.
+* The training set take only single feature or column of the training data set as training set. Inside iloc we use two columns (:,1:2) to to get us an 2D array whereas if we use just one colunm(:,1) then will get a a vector(1D array).
 
-Now we will create a structure with 60 timesteps and one output. the previous timetables will be saved in X_train list and the output will be saved in y_train list.
+* This rnn will have a sigmoid activation function at the output layer. So we will use the feature scaling that is normalisation instead standardization by using the min_Max_scaler class and create the object sc to do so.
 
-for 1 y_train element(price at a single day) which is present in a single row will have 60 elements in a single row in X_train (price at previous 60 days(timestamps))  on which which will be trained to get the output in the y_train.
+* Now we will create a structure with 60 timesteps and one output. the previous timestamps will be saved in X_train list and the output will be saved in y_train list.
+  * In X_train elements are saved as arrays which contains 60 timestamp where as in y_train elements are just numbers.
+  * Finally, those lists are converted into numpy arrays.
 
-like the output(price) 61 is trained On previous 60 timestamps prices  present in X_train.
+*For 1 y_train element(price at a single day) which is present in a single row will have 60 elements in a single row in X_train (price at previous 60 days(timestamps))  on which which will be trained to get the output in the y_train.
+e.g. the output(price) 61 is trained On previous 60 timestamps prices  present in X_train.*
 
-In X_train  elements are saved as arrays which contains 60 timestamp where as in y_train elements are just numbers not
-
-Finally, those lists are converted into numpy arrays.
-
+* Now we will add a new dimension, to add new indicators/features by using reshape function.
 
 
-Now we will add a new dimension, to add new indicators/features by using reshape function.
+### PART-2 Building RNN
 
 RNN takes input as a 3D tensor that is a 3D array with shape [batch, timesteps, feature].Batch size  here training is made with single batch which consists of all the the stock prices from 2012-2016. In time steps which we know it is 60 and in feature we will be only using the 'open' column values in the csv file as feature so we will keep it as 1, if we use any other feature or indicator we can increase it.
 
 Built stacked RNN which consists of dropout regularization various models and layers
-
-### BUILDING RNN
 
 we create lstm layer where we use 50 units(neurons). Return_sequence is returned true because it will be use lstm lyer again later. In input_shape, shape has the last two dimensions of the X_train, where each row of X_train is an input for the rnn. Finally, we add a dropout layer to which can drop 20% of the units/neurons for regularising while backpropagating and front propagating.
 
@@ -34,13 +32,12 @@ we are Using 50 units and 4 LSTM layers because to increase the dimensionality o
 
 Finally we add a output layer which is the dense layer and the units=1. 
 
-
-
 x_train-input
-
 y_train-ground truth
 
 epochs-how many times(iterations) we want the model to hold the training data to forward propagate and back propagate to update the weight
+
+### PART-3 Making the predictions and visualising the results
 
 first we initialize the real stock price to compare with predicted one later.
 
