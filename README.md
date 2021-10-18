@@ -22,7 +22,7 @@ e.g. the output(price) 61 is trained On previous 60 timestamps prices  present i
 
 ### PART-2 Building RNN
 
-RNN takes input as a 3D tensor that is a 3D array with shape [batch, timesteps, feature].Batch size  here training is made with single batch which consists of all the the stock prices from 2012-2016. In time steps which we know it is 60 and in feature we will be only using the 'open' column values in the csv file as feature so we will keep it as 1, if we use any other feature or indicator we can increase it.
+*RNN takes input as a 3D tensor that is a 3D array with shape [batch, timesteps, feature].Batch size  here training is made with single batch which consists of all the the stock prices from 2012-2016. In time steps which we know it is 60 and in feature we will be only using the 'open' column values in the csv file as feature so we will keep it as 1, if we use any other feature or indicator we can increase it.*
 
 Built stacked RNN which consists of dropout regularization various models and layers
 
