@@ -6,6 +6,9 @@ Three Types of RNNs:
 * many to one, e.g. input- a review and output- the sentiment of the review.
 * many to many, translating sentences from one language to another.
 
+![1_go8PHsPNbbV6qRiwpUQ5BQ](https://user-images.githubusercontent.com/85345738/138188641-fd0e6816-ef8e-46f1-986e-cca36b26755a.png)
+
+
 **vanishing gradient problem**
 ------------------------------
 
